@@ -1,7 +1,7 @@
 package com.example.iasmim;
 
 import com.example.iasmim.Curriculo;
-// import com.example.iasmim.ServiceTarefa;
+import com.example.iasmim.CurriculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,34 +9,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/curriculos")
+@RequestMapping("/iasmim/curriculos")
 public class CurriculoController {
     @Autowired
-    private CurriculoRepository curriculoRepository;
+    private CurriculoService curriculoService;
 
     @GetMapping
     public List<Curriculo> listarCurriculos() {
-        return curriculoRepository.findAll();
+        return curriculoService.listarCurriculos();
     }
 
     @GetMapping("/{id}")
     public Curriculo buscarCurriculo(@PathVariable Long id) {
-        return curriculoRepository.findById(id).orElse(null);
+        return curriculoService.buscarCurriculo(id);
     }
 
     @PostMapping
     public Curriculo cadastrarCurriculo(@RequestBody Curriculo curriculo) {
-        return curriculoRepository.save(curriculo);
+        return curriculoService.cadastrarCurriculo(curriculo);
     }
 
     @PutMapping("/{id}")
     public Curriculo atualizarCurriculo(@PathVariable Long id, @RequestBody Curriculo curriculo) {
-        curriculo.setId(id);
-        return curriculoRepository.save(curriculo);
+        return curriculoService.atualizarCurriculo(id, curriculo);
     }
 
     @DeleteMapping("/{id}")
     public void deletarCurriculo(@PathVariable Long id) {
-        curriculoRepository.deleteById(id);
+        curriculoService.deletarCurriculo(id);
     }
 }
