@@ -12,10 +12,9 @@
 	<artifactId>iasmim</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>iasmim</name>
-	<description>Curricilo project for Spring Boot</description>
+	<description>Curriculo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-	
 	</properties>
 	<dependencies>
 		<dependency>
@@ -43,6 +42,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<!-- <version>16</version> -->
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -61,5 +67,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
