@@ -10,8 +10,8 @@ import java.lang.String;
 import java.util.List;
 
 @RestController
-@RequestMapping("/iasmim/curriculos")
-public class CurriculoController {
+@RequestMapping("/api/curriculos")
+public class CurriculoController {  
     
     @Autowired
     private CurriculoService curriculoService;
