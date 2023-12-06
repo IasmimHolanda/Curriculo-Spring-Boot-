@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/curriculos")
-public class CurriculoController {  
+public class CurriculoController {
     
     @Autowired
     private CurriculoService curriculoService;
