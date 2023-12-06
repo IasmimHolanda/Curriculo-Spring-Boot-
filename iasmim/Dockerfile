@@ -11,6 +11,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build /target/iasmim-1.0.0.jar app.jar
+COPY --from=build /workspace/iasmim/target/iasmim-0.0.1-SNAPSHOT.jar /app/app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
