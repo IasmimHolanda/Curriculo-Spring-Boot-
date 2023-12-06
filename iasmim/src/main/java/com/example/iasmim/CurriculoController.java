@@ -10,7 +10,6 @@ import java.lang.String;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/curriculos")
 public class CurriculoController {
     
     @Autowired
